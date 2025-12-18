@@ -81,7 +81,7 @@
       return; 
     }
 
-    fetch('http://127.0.0.1:3000/api/v1/feedback/create', { 
+    fetch('https://feedback-pulse-backend.onrender.com/api/v1/feedback/create', { 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
