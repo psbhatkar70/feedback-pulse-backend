@@ -46,7 +46,6 @@ exports.getAllProjects= async (req , res)=>{
 exports.getSingleProject= async (req , res)=>{
 
     try {
-    // const id =req.body;
     const project = await prisma.project.findUnique({where :{id: req.body.id}})
 
         res.status(201).json({

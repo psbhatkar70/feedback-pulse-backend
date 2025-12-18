@@ -6,7 +6,7 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE"], 
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
-const path = require('path'); // <--- ADD THIS LINE
+const path = require('path');
 app.use(express.json())
 
 const userRoutes=require('./routes/userRoutes');

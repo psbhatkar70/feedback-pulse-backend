@@ -33,25 +33,20 @@ exports.addfeedBack=async (req, res) => {
 
 exports.getAllFeedbacks = async (req, res) => {
     try {
-        // 1. Extract projectId and the filter type from the request
         const { projectId, type } = req.body; 
-
-        // 2. Build the "where" object
         let queryFilters = {
             projectId: projectId
         };
 
-        // 3. If a type exists and is NOT "All", add it to the filter
         if (type && type !== 'All') {
             queryFilters.type = type;
         }
 
-        // 4. Pass the object to Prisma
         const feedbacks = await prisma.feedback.findMany({
             where: queryFilters
         });
 
-        res.status(200).json({ // Changed to 200 (OK) instead of 201 (Created)
+        res.status(200).json({
             data: {
                 feedbacks
             }
