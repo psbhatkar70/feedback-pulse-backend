@@ -11,7 +11,7 @@ exports.createProject= async (req , res)=>{
                 userId:req.user.id
             } 
         })
-        const script = `<script src="http://127.0.0.1:3000/widget.js" data-project-id="${newproject.id}"></script>`
+        const script = `<script src="https://feedback-pulse-backend.onrender.com/widget.js" data-project-id="${newproject.id}"></script>`
         const finalProject = await prisma.project.update({
         where: { id: newproject.id },
         data: { script: script }
